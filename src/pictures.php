@@ -66,7 +66,8 @@ class pictures {
             /**
              * Fallback
              */
-            $this->html .= '<img class="'.$this->attributes['class'].'" src="'.$this->attributes['src'].'" alt="'.$this->attributes['alt'].'">';
+            $image = getimagesize(ABSPATH . $this->attributes['src']);
+            $this->html .= '<img class="'.$this->attributes['class'].'" src="'.$this->attributes['src'].'" alt="'.$this->attributes['alt'].'" '.$image[3].'>';
 
 
         $this->html .= '</picture>';
